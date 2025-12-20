@@ -1,0 +1,857 @@
+/* ==================== VARIABLES (Comentarios) ==================== */
+/* Colores principales:
+   - Primary: #3498DB (azul)
+   - Success: #27AE60 (verde)
+   - Danger: #E74C3C (rojo)
+   - Dark: #2C3E50
+   - Light BG: #F8F9FA
+   - Border: #CCCCCC
+*/
+
+/* ==================== RESET GLOBAL ==================== */
+* {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+QMainWindow {
+    background-color: #F8F9FA;
+}
+
+/* ==================== HEADER ==================== */
+#headerWidget {
+    background-color: white;
+    border-bottom: 2px solid #CCCCCC;
+    min-height: 60px;
+    max-height: 60px;
+}
+
+#appTitle {
+    color: #2C3E50;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#usernameLabel {
+    color: #34495E;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#headerButton {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 32px;
+}
+
+#headerButton:hover {
+    background-color: #D5DBDB;
+    border-color: #95A5A6;
+}
+
+#headerButton:pressed {
+    background-color: #BDC3C7;
+}
+
+#logoutButton {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 36px;
+}
+
+#logoutButton:hover {
+    background-color: #2980B9;
+}
+
+#logoutButton:pressed {
+    background-color: #21618C;
+}
+
+/* ==================== TOOLBAR DEL MAPA ==================== */
+#mapToolbar {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #FFFFFF,
+        stop:1 #F8F9FA
+    );
+    border-bottom: 2px solid #CCCCCC;
+    spacing: 0px;
+    padding: 8px 12px;
+}
+
+/* Separadores del toolbar */
+#mapToolbar::separator {
+    background-color: #CCCCCC;
+    width: 4px;
+    margin: 4px 8px;
+}
+
+/* Botones del toolbar */
+QToolBar QToolButton {
+    background-color: white;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    padding: 8px;
+    min-width: 40px;
+    min-height: 40px;
+    margin: 0px 2px;
+}
+
+QToolBar QToolButton:hover {
+    background-color: #E9ECEF;
+    border-color: #ADB5BD;
+}
+
+QToolBar QToolButton:pressed {
+    background-color: #DEE2E6;
+}
+
+QToolBar QToolButton:checked {
+    background-color: #3498DB;
+    color: white;
+    border: 2px solid #2980B9;
+}
+
+QToolBar QToolButton:checked:hover {
+    background-color: #2980B9;
+}
+
+/* Labels en el toolbar (para "Tamaño:") */
+QToolBar QLabel {
+    color: #2C3E50;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0px 8px;
+}
+
+/* Sliders en el toolbar */
+QToolBar QSlider::groove:horizontal {
+    height: 6px;
+    background: #E9ECEF;
+    border-radius: 3px;
+}
+
+QToolBar QSlider::handle:horizontal {
+    background: #3498DB;
+    border: 2px solid #2980B9;
+    width: 16px;
+    height: 16px;
+    margin: -6px 0;
+    border-radius: 8px;
+}
+
+QToolBar QSlider::handle:horizontal:hover {
+    background: #2980B9;
+}
+
+/* ==================== MENÚ LATERAL ==================== */
+#sideMenuFrame {
+    background-color: white;
+    border-right: 2px solid #CCCCCC;
+}
+
+#menuToggleColumn {
+    background-color: #ECF0F1;
+    border-right: 2px solid #CCCCCC;
+}
+
+#toggleMenuButton {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+#toggleMenuButton:hover {
+    background-color: #2980B9;
+}
+
+#toggleMenuButton:pressed {
+    background-color: #21618C;
+}
+
+#menuTitleLabel {
+    color: #2C3E50;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ==================== PÁGINAS DE PREGUNTAS ==================== */
+#questionNumberLabel {
+    color: #3498DB;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 0px;
+}
+
+#questionTextLabel {
+    color: #2C3E50;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 12px;
+    background-color: #F8F9FA;
+    border-left: 4px solid #3498DB;
+    border-radius: 4px;
+}
+
+#optionsLabel {
+    color: #34495E;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+/* Radio buttons */
+QRadioButton {
+    font-size: 15px;
+    color: #2C3E50;
+    spacing: 12px;
+    padding: 8px;
+}
+
+QRadioButton::indicator {
+    width: 20px;
+    height: 20px;
+}
+
+QRadioButton::indicator:unchecked {
+    border: 2px solid #BDC3C7;
+    border-radius: 10px;
+    background-color: white;
+}
+
+QRadioButton::indicator:unchecked:hover {
+    border-color: #3498DB;
+}
+
+QRadioButton::indicator:checked {
+    border: 2px solid #3498DB;
+    border-radius: 10px;
+    background-color: #3498DB;
+}
+
+/* ==================== BOTONES DE ACCIÓN ==================== */
+#sendAnswerButton {
+    background-color: #5D6D7E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    min-height: 44px;
+}
+
+#sendAnswerButton:hover {
+    background-color: #4A5A6A;
+}
+
+#sendAnswerButton:pressed {
+    background-color: #3D4A56;
+}
+
+#sendAnswerButton:disabled {
+    background-color: #BDC3C7;
+    color: #7F8C8D;
+}
+
+#newProblemButton {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+#newProblemButton:hover {
+    background-color: #2980B9;
+}
+
+#newProblemButton:pressed {
+    background-color: #21618C;
+}
+
+#backButton {
+    background-color: #95A5A6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+#backButton:hover {
+    background-color: #7F8C8D;
+}
+
+/* Botones de navegación (◀ ▶) */
+#navButton {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+#navButton:hover:enabled {
+    background-color: #2980B9;
+}
+
+#navButton:pressed {
+    background-color: #21618C;
+}
+
+#navButton:disabled {
+    background-color: #BDC3C7;
+    color: #7F8C8D;
+}
+
+/* ==================== FOOTER / INDICADORES ==================== */
+#footerWidget {
+    background-color: #F8F9FA;
+    border-top: 2px solid #E9ECEF;
+    padding: 8px 0px;
+}
+
+#questionIndicator {
+    color: #2C3E50;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    padding: 8px 16px;
+    min-width: 60px;
+}
+
+/* ==================== PÁGINA DE SELECCIÓN ==================== */
+#problemSelectionTitle {
+    color: #2C3E50;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Botones RANDOM y LISTA - verticales, mismo tamaño */
+#modeButton {
+    background-color: white;
+    color: #2C3E50;
+    border: 2px solid #BDC3C7;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 55px;
+    max-height: 55px;
+    min-width: 200px;
+    max-width: 200px;
+}
+
+#modeButton:hover {
+    background-color: #F8F9FA;
+    border-color: #3498DB;
+    color: #3498DB;
+}
+
+#modeButton:checked {
+    background-color: #E9ECEF;
+    color: 2C3E50;
+    border-color: #BDC3C7;
+}
+
+#modeButton:pressed {
+    background-color: #DEE2E6;
+}
+
+/* Botón Cancelar - gris */
+#backButton {
+    background-color: #5D6D7E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    min-height: 44px;
+    min-width: 100px;
+}
+
+#backButton:hover {
+    background-color: #4A5A6A;
+}
+
+#backButton:pressed {
+    background-color: #3D4A56;
+}
+
+/* Botón Aceptar - ya existe como sendAnswerButton pero lo redefinimos aquí también */
+#acceptButton {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    min-height: 44px;
+    min-width: 100px;
+}
+
+#acceptButton:hover {
+    background-color: #2980B9;
+}
+
+#acceptButton:pressed {
+    background-color: #21618C;
+}
+
+/* ==================== TABLA DE PROBLEMAS ==================== */
+#problemTable {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    gridline-color: #E9ECEF;
+    selection-background-color: #D6EAF8;
+    selection-color: #2C3E50;
+}
+
+#problemTable::item {
+    padding: 8px;
+    border-bottom: 1px solid #E9ECEF;
+}
+
+#problemTable::item:hover {
+    background-color: #F8F9FA;
+}
+
+#problemTable::item:selected {
+    background-color: #D6EAF8;
+}
+
+QHeaderView::section {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #BDC3C7;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ==================== SLIDERS GENERALES ==================== */
+QSlider::groove:horizontal {
+    height: 8px;
+    background: #E9ECEF;
+    border-radius: 4px;
+    border: 1px solid #CED4DA;
+}
+
+QSlider::handle:horizontal {
+    background: #3498DB;
+    border: 2px solid #2980B9;
+    width: 18px;
+    height: 18px;
+    margin: -6px 0;
+    border-radius: 9px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #2980B9;
+    border-color: #21618C;
+}
+
+QSlider::handle:horizontal:pressed {
+    background: #21618C;
+}
+
+/* ==================== SCROLLBARS==================== */
+QScrollBar:vertical {
+    background: #F8F9FA;
+    width: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #BDC3C7;
+    border-radius: 6px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #95A5A6;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+/* ============= ESTILOS DE AUTHWINDOW ============= */
+/* Contenedor principal de la ventana de autenticación (QDialog) */
+QDialog#AuthWindow {
+    background-color: #F8F9FA;
+    color: #2C3E50;
+    border: none;
+}
+
+/* Cabecera en AuthWindow */
+QDialog#AuthWindow #headerWidget {
+    background-color: white;
+    border-bottom: 2px solid #CCCCCC;
+    min-height: 60px;
+    max-height: 60px;
+}
+
+QDialog#AuthWindow #titulo {
+    color: 3498DB;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+QDialog#AuthWindow #titulo_2 {
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Estilo general para los QLineEdit dentro de AuthWindow */
+QDialog#AuthWindow QLineEdit {
+    background-color: white;
+    color: #2C3E50;
+    border: 2px solid #CED4DA;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 20px;
+    max-height: 44px;
+}
+
+QDialog#AuthWindow QLineEdit:focus {
+    border-color: #3498DB;
+    background-color: #F8F9FA;
+}
+
+/* Estilo para QDateEdit - MISMO ESTILO QUE EL COMBOBOX DEL AVATAR */
+QDialog#AuthWindow QDateEdit {
+    background-color: white;
+    color: #2C3E50;
+    border: 2px solid #CED4DA;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 20px;
+    max-height: 44px;
+}
+
+QDialog#AuthWindow QDateEdit:hover {
+    border-color: #AAB3BC;
+}
+
+QDialog#AuthWindow QDateEdit:focus {
+    border-color: #3498DB;
+    background-color: #F8F9FA;
+}
+
+/* Ocultar TODAS las flechas y botones del QDateEdit */
+QDialog#AuthWindow QDateEdit::up-button,
+QDialog#AuthWindow QDateEdit::down-button,
+QDialog#AuthWindow QDateEdit::drop-down {
+    width: 0px;
+    height: 0px;
+    border: none;
+    background: transparent;
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+}
+
+QDialog#AuthWindow QDateEdit::up-arrow,
+QDialog#AuthWindow QDateEdit::down-arrow {
+    image: none;
+    width: 0px;
+    height: 0px;
+}
+
+/* Etiquetas de error */
+QDialog#AuthWindow QLabel[objectName*="Error"] {
+    color: #E74C3C;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Botones de acción principales de Login/Register */
+QDialog#AuthWindow QPushButton {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 22px;
+}
+
+QDialog#AuthWindow QPushButton:hover {
+    background-color: #2980B9;
+}
+
+QDialog#AuthWindow QPushButton:pressed {
+    background-color: #21618C;
+}
+
+QDialog#AuthWindow QPushButton:disabled {
+    background-color: #BDC3C7;
+    color: #7F8C8D;
+}
+
+/* Otros Labels (títulos, instrucciones) */
+QDialog#AuthWindow QLabel {
+    color: #2C3E50;
+    font-size: 16px;
+}
+
+/* Títulos principales de las páginas */
+QDialog#AuthWindow QLabel#loginTitle,
+QDialog#AuthWindow QLabel#registerTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3498DB;
+    margin-bottom: 20px;
+}
+
+/* Calendario popup */
+QCalendarWidget {
+    background-color: white;
+    border: 2px solid #CED4DA;
+    border-radius: 6px;
+}
+
+QCalendarWidget QToolButton {
+    background-color: white;
+    color: #2C3E50;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    min-height: 30px;
+}
+
+QCalendarWidget QToolButton:hover {
+    background-color: #E9ECEF;
+}
+
+QCalendarWidget QMenu {
+    background-color: white;
+    border: 1px solid #CED4DA;
+}
+
+QCalendarWidget QAbstractItemView {
+    selection-background-color: #3498DB;
+    selection-color: white;
+    border: none;
+}
+
+QCalendarWidget QAbstractItemView:enabled {
+    color: #2C3E50;
+    background-color: white;
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #F8F9FA;
+    border-bottom: 1px solid #CED4DA;
+}
+
+/* ============= ESTILOS DE EDITPROFILEWINDOW ============= */
+
+/* Contenedor principal del diálogo de edición de perfil */
+QDialog#EditProfileWindow {
+    background-color: #F8F9FA;
+    color: #2C3E50;
+    border: none;
+}
+
+/* Título principal */
+QDialog#EditProfileWindow #editProfileTitle {
+    color: #3498DB;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo general para los QLineEdit dentro de EditProfileWindow */
+QDialog#EditProfileWindow QLineEdit {
+    background-color: white;
+    color: #2C3E50;
+    border: 2px solid #CED4DA;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 20px;
+    max-height: 44px;
+}
+
+QDialog#EditProfileWindow QLineEdit:focus {
+    border-color: #3498DB;
+    background-color: #F8F9FA;
+}
+
+QDialog#EditProfileWindow QLineEdit:disabled {
+    background-color: #E9ECEF;
+    color: #6C757D;
+    border: 2px solid #DEE2E6;
+}
+
+/* Estilo para QDateEdit */
+QDialog#EditProfileWindow QDateEdit {
+    background-color: white;
+    color: #2C3E50;
+    border: 2px solid #CED4DA;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 20px;
+    max-height: 44px;
+}
+
+QDialog#EditProfileWindow QDateEdit:hover {
+    border-color: #AAB3BC;
+}
+
+QDialog#EditProfileWindow QDateEdit:focus {
+    border-color: #3498DB;
+    background-color: #F8F9FA;
+}
+
+/* Ocultar TODAS las flechas y botones del QDateEdit */
+QDialog#EditProfileWindow QDateEdit::up-button,
+QDialog#EditProfileWindow QDateEdit::down-button,
+QDialog#EditProfileWindow QDateEdit::drop-down {
+    width: 0px;
+    height: 0px;
+    border: none;
+    background: transparent;
+}
+
+QDialog#EditProfileWindow QDateEdit::up-arrow,
+QDialog#EditProfileWindow QDateEdit::down-arrow {
+    image: none;
+    width: 0px;
+    height: 0px;
+}
+
+
+/* Etiquetas de error */
+QDialog#EditProfileWindow QLabel[objectName*="Error"] {
+    color: #E74C3C;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Botones de toggle password */
+QDialog#EditProfileWindow QPushButton[objectName*="togglePassword"] {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+}
+
+QDialog#EditProfileWindow QPushButton[objectName*="togglePassword"]:hover {
+    background-color: #E9ECEF;
+    border-radius: 4px;
+}
+
+/* Botón Cancelar */
+QDialog#EditProfileWindow QPushButton#cancelButton {
+    background-color: #6C757D;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 22px;
+    min-width: 120px;
+}
+
+QDialog#EditProfileWindow QPushButton#cancelButton:hover {
+    background-color: #5A6268;
+}
+
+QDialog#EditProfileWindow QPushButton#cancelButton:pressed {
+    background-color: #495057;
+}
+
+/* Botón Guardar Cambios */
+QDialog#EditProfileWindow QPushButton#saveButton {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 22px;
+    min-width: 120px;
+}
+
+QDialog#EditProfileWindow QPushButton#saveButton:hover {
+    background-color: #2980B9;
+}
+
+QDialog#EditProfileWindow QPushButton#saveButton:pressed {
+    background-color: #21618C;
+}
+
+QDialog#EditProfileWindow QPushButton#saveButton:disabled {
+    background-color: #BDC3C7;
+    color: #7F8C8D;
+    border: 1px solid #95A5A6;
+}
+
+/* Labels generales */
+QDialog#EditProfileWindow QLabel {
+    color: #2C3E50;
+    font-size: 14px;
+}
+
+/*=======================POPUP LISTA DE PROBLEMAS =================*/
+QDialog#ProblemListDialog {
+    background-color: white;
+}
+
+QDialog#ProblemListDialog #dialogTitle {
+    color: #3498DB;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+QDialog#ProblemListDialog QTableWidget {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    gridline-color: #E9ECEF;
+    selection-background-color: #D6EAF8;
+    selection-color: #2C3E50;
+}
