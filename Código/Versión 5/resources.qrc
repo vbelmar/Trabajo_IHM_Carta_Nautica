@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>resources/carta_nautica.jpg</file>
+        <file>resources/icons/compass_leg.svg</file>
+        <file>resources/icons/ruler.svg</file>
+        <file>resources/icons/transportador.svg</file>
+        <file>resources/icons/mano.png</file>
+        <file>resources/icons/raton.png</file>
+        <file>resources/icons/point.png</file>
+        <file>resources/icons/rubber.png</file>
+        <file>resources/icons/line.png</file>
+        <file>resources/icons/texto.png</file>
+        <file>resources/icons/color.png</file>
+        <file>resources/icons/delete.png</file>
+        <file>resources/icons/regla.png</file>
+        <file>resources/icons/transportador.png</file>
+        <file>resources/icons/compas.png</file>
+        <file>resources/icons/coordinates - copia.png</file>
+        <file>resources/styles.qss</file>
+        <file>resources/icons/avatar1.png</file>
+        <file>resources/icons/avatar2.png</file>
+        <file>resources/icons/avatar3.png</file>
+        <file>resources/icons/avatar4.png</file>
+        <file>resources/icons/avatar5.png</file>
+        <file>resources/icons/avatar6.png</file>
+        <file>resources/icons/ojo.png</file>
+        <file>resources/icons/invisible.png</file>
+        <file>resources/icons/help.png</file>
+    </qresource>
+</RCC>
